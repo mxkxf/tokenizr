@@ -51,8 +51,8 @@ class Tokenizr
    */
   private function getRandomCharacter()
   {
-    $characters       = $this->getCharacters();
-    $randomElement    = rand(0, strlen($characters) - 1);
+    $characters    = $this->getCharacters();
+    $randomElement = rand(0, strlen($characters) - 1);
     return $characters[$randomElement];
   }
 
@@ -65,7 +65,7 @@ class Tokenizr
    */
   public function doesTokenExist($token)
   {
-    return (bool) (in_array($token, $this->getExistingTokens()));
+    return (bool) in_array($token, $this->getExistingTokens());
   }
 
 
@@ -76,7 +76,7 @@ class Tokenizr
    */
   public function setCharacters($characters)
   {
-    if (!is_string($characters) or $characters === '')
+    if (! is_string($characters) or $characters === '')
     {
       throw new \InvalidArgumentException("$characters should be a string");
     }
