@@ -1,0 +1,18 @@
+{
+    "name": "mikefrancis/tokenizr",
+    "authors": [
+        {
+            "name": "Mike Francis",
+            "email": "mikeffrancis@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    }
+}
