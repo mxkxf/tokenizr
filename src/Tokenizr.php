@@ -36,7 +36,7 @@ class Tokenizr
     {
       $token .= $this->getRandomCharacter();
     }
-    if ($this->doesTokenExist($token, $this->existingTokens))
+    if ($this->doesTokenExist($token))
     {
       return $this->generate($length);
     }
@@ -52,8 +52,7 @@ class Tokenizr
   private function getRandomCharacter()
   {
     $characters       = $this->getCharacters();
-    $charactersLength = strlen($characters) - 1;
-    $randomElement    = rand(0, $charactersLength);
+    $randomElement    = rand(0, strlen($characters) - 1);
     return $characters[$randomElement];
   }
 
