@@ -1,0 +1,5 @@
+spec                export-ignore
+.gitattributes      export-ignore
+.gitignore          export-ignore
+README              export-ignore
+phpspec.yaml        export-ignore
