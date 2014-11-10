@@ -40,6 +40,7 @@ class Tokenizr
     {
       return $this->generate($length);
     }
+    $this->setExistingTokens([$token]);
     return $token;
   }
 
