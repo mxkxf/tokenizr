@@ -15,7 +15,7 @@ and run `composer update` to pull in the package.
 
 ## Basic Usage
 
-Create a new `Tokenizr` instance and generate a token:
+Create a new `Tokenizr` instance:
 
     $tokenizr = new Tokenizr();
 
