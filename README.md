@@ -23,6 +23,10 @@ and then go ahead and generate some tokens:
 
     $token = $tokenizr->generate();
     
+By default Tokenizr will generate URL friendly, alpha-numeric tokens. If you'd like to change the bank of characters which is used, you can do by overriding the default character set:
+
+    $tokenizr->setCharacters('!@£$%^&*()');
+    
 You can also set a bunch of tokens first, as not to create duplicates when generating new ones:
 
     $tokenizr->setExistingTokens(['4uNq1', '6ijRw']);
