@@ -25,4 +25,4 @@ and then go ahead and generate some tokens:
     
 You can also set a bunch of tokens first, as not to create duplicates when generating new ones:
 
-    $tokenizr->setTokens(['4uNq1', '6ijRw']);
+    $tokenizr->setExistingTokens(['4uNq1', '6ijRw']);
