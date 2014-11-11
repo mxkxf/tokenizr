@@ -1,5 +1,6 @@
 {
     "name": "mikefrancis/tokenizr",
+    "description": "PHP library to generate unique, URL friendly tokens",
     "authors": [
         {
             "name": "Mike Francis",
