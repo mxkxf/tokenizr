@@ -22,7 +22,7 @@ class TokenizrSpec extends ObjectBehavior
   
   function it_returns_a_random_string()
   {
-    $this->generate(5)->shouldBeString();
+    $this->generate()->shouldBeString();
   }
 
 

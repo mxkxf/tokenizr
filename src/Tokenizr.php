@@ -4,7 +4,7 @@ class Tokenizr
 {
 
   /**
-   * Bank of characters to generate string from
+   * Bank of characters to generate string from.
    * 
    * @var string
    */
@@ -12,7 +12,7 @@ class Tokenizr
 
 
   /**
-   * Holder for an existing tokens to compare against
+   * Holder for an existing tokens to compare against.
    * 
    * @var array
    */
@@ -20,7 +20,7 @@ class Tokenizr
 
 
   /**
-   * Generate a new token
+   * Generate a new token and sets in existing tokens array.
    * 
    * @param  integer $length
    * @return string
@@ -31,11 +31,7 @@ class Tokenizr
     {
       throw new \InvalidArgumentException("{$length} is not a valid length of token to generate");
     }
-    $token = '';
-    for ($i = 0; $i < $length; $i ++)
-    {
-      $token .= $this->getRandomCharacter();
-    }
+    $token = substr(str_shuffle(str_repeat($this->getCharacters(), 5)), 0, $length);
     if ($this->doesTokenExist($token))
     {
       return $this->generate($length);
@@ -46,32 +42,19 @@ class Tokenizr
 
 
   /**
-   * Get a random character from the bank
-   * 
-   * @return string
-   */
-  private function getRandomCharacter()
-  {
-    $characters    = $this->getCharacters();
-    $randomElement = rand(0, strlen($characters) - 1);
-    return $characters[$randomElement];
-  }
-
-
-  /**
-   * Check if the supplied token already exists
+   * Check if the supplied token already exists.
    * 
    * @param  string $token
    * @return bool
    */
-  public function doesTokenExist($token)
+  private function doesTokenExist($token)
   {
     return (bool) in_array($token, $this->getExistingTokens());
   }
 
 
   /**
-   * Set a new bank of characters
+   * Set a new bank of characters.
    * 
    * @param string $characters
    */
@@ -86,7 +69,7 @@ class Tokenizr
 
 
   /**
-   * Get the bank of characters in use
+   * Get the bank of characters in use.
    * 
    * @return string
    */
@@ -97,7 +80,7 @@ class Tokenizr
 
 
   /**
-   * Set the existing tokens array
+   * Set the existing tokens array.
    * 
    * @param array $tokens
    */
@@ -112,7 +95,7 @@ class Tokenizr
 
 
   /**
-   * Get the existing tokens array
+   * Get the existing tokens array.
    * 
    * @return array
    */
