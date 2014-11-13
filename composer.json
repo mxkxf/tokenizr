@@ -1,7 +1,7 @@
 {
     "name": "mikefrancis/tokenizr",
     "description": "PHP library to generate unique, URL friendly tokens",
-    "licence": "MIT",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mike Francis",
