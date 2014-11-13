@@ -31,13 +31,24 @@ class Tokenizr
     {
       throw new \InvalidArgumentException("{$length} is not a valid length of token to generate");
     }
-    $token = substr(str_shuffle(str_repeat($this->getCharacters(), 5)), 0, $length);
+    $token = $this->createRandomString($length);
     if ($this->doesTokenExist($token))
     {
       return $this->generate($length);
     }
     $this->setExistingTokens([$token]);
     return $token;
+  }
+  
+  /**
+   * Create a random string for use with a token.
+   * 
+   * @param integer $length
+   * @return string
+   */
+  private function createRandomString($length, $complexity = 5)
+  {
+    return substr(str_shuffle(str_repeat($this->getCharacters(), $complexity)), 0, $length);
   }
 
 
