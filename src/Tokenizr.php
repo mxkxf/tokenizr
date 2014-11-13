@@ -40,6 +40,7 @@ class Tokenizr
     return $token;
   }
   
+  
   /**
    * Create a random string for use with a token.
    * 
