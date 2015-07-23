@@ -1,4 +1,4 @@
-<?php
+<?php namespace MikeFrancis;
 
 class Tokenizr
 {
