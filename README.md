@@ -1,7 +1,7 @@
 tokenizr
 ========
 
-[![Build Status](https://travis-ci.org/mikefrancis/tokenizr.svg?branch=master)](https://travis-ci.org/mikefrancis/tokenizr)
+[![Build Status](https://travis-ci.org/mikefrancis/tokenizr.svg?branch=master)](https://travis-ci.org/mikefrancis/tokenizr)[![Coverage Status](https://coveralls.io/repos/mikefrancis/tokenizr/badge.svg?branch=master&service=github)](https://coveralls.io/github/mikefrancis/tokenizr?branch=master)
 
 PHP library to generate unique, URL friendly tokens. Built with TDD.
 
