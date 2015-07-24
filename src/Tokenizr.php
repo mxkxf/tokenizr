@@ -19,7 +19,7 @@ class Tokenizr
     /**
      * Generate a new token and sets in existing tokens array.
      *
-     * @param  integer $length
+     * @param  int    $length
      * @return string
      */
     public function generate($length = 5)
@@ -42,7 +42,7 @@ class Tokenizr
     /**
      * Create a random string for use with a token.
      *
-     * @param integer $length
+     * @param  int    $length
      * @return string
      */
     private function createRandomString($length, $complexity = 5)
@@ -65,6 +65,8 @@ class Tokenizr
      * Set a new bank of characters.
      *
      * @param string $characters
+     * @throws \InvalidArgumentException
+     * @return void
      */
     public function setCharacters($characters)
     {
@@ -89,6 +91,8 @@ class Tokenizr
      * Set the existing tokens array.
      *
      * @param array $tokens
+     * @throws \InvalidArgumentException
+     * @return void
      */
     public function setExistingTokens($tokens)
     {
