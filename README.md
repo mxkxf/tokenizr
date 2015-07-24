@@ -17,7 +17,7 @@ and run `composer update` to pull in the package.
 
 Create a new `Tokenizr` instance:
 
-    $tokenizr = new Tokenizr();
+    $tokenizr = new MikeFrancis\Tokenizr();
 
 and then go ahead and generate some tokens:
 
