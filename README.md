@@ -9,7 +9,7 @@ PHP library to generate unique, URL friendly tokens. Built with TDD.
 
 Add the following to your project's composer.json require block:
 
-    "mikefrancis/tokenizr": "dev-master"
+    "mikefrancis/tokenizr": "1.0"
 
 and run `composer update` to pull in the package.
 
