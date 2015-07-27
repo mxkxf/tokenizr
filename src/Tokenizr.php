@@ -1,5 +1,7 @@
 <?php namespace MikeFrancis;
 
+use InvalidArgumentException;
+
 class Tokenizr
 {
     /**
@@ -25,7 +27,7 @@ class Tokenizr
     public function generate($length = 5)
     {
         if (! is_int($length) or $length <= 0) {
-            throw new \InvalidArgumentException("{$length} is not a valid length of token to generate");
+            throw new InvalidArgumentException("{$length} is not a valid length of token to generate");
         }
 
         $token = $this->createRandomString($length);
@@ -65,13 +67,13 @@ class Tokenizr
      * Set a new bank of characters.
      *
      * @param string $characters
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return void
      */
     public function setCharacters($characters)
     {
         if (! is_string($characters) or $characters === '') {
-            throw new \InvalidArgumentException("$characters should be a string");
+            throw new InvalidArgumentException("$characters should be a string");
         }
 
         $this->characters = $characters;
@@ -91,13 +93,13 @@ class Tokenizr
      * Set the existing tokens array.
      *
      * @param array $tokens
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return void
      */
     public function setExistingTokens($tokens)
     {
         if (! is_array($tokens)) {
-            throw new \InvalidArgumentException("$tokens should be an array");
+            throw new InvalidArgumentException("$tokens should be an array");
         }
 
         $this->existingTokens = $tokens;
