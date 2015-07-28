@@ -30,3 +30,7 @@ By default Tokenizr will generate URL friendly, alpha-numeric tokens. If you'd l
 You can also set a bunch of tokens first, as not to create duplicates when generating new ones:
 
     $tokenizr->setExistingTokens(['4uNq1', '6ijRw']);
+
+By default, Tokenizr will generate 5 character strings, but if you'd like them to be longer/shorter just do the following before you generate any tokens:
+
+    $tokenizr->setTokenLength(32);

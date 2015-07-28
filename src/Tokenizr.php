@@ -5,6 +5,13 @@ use InvalidArgumentException;
 class Tokenizr
 {
     /**
+     * The complexity of each token.
+     *
+     * @const int
+     */
+    const TOKENIZR_COMPLEXITY = 5;
+
+    /**
      * Bank of characters to generate string from.
      *
      * @var string
@@ -19,24 +26,26 @@ class Tokenizr
     private $existingTokens = [];
 
     /**
+     * Default token length.
+     * 
+     * @var integer
+     */
+    private $length = 5;
+
+    /**
      * Generate a new token and sets in existing tokens array.
      *
-     * @param  int    $length
      * @return string
      */
-    public function generate($length = 5)
+    public function generate()
     {
-        if (! is_int($length) or $length <= 0) {
-            throw new InvalidArgumentException("{$length} is not a valid length of token to generate");
-        }
-
-        $token = $this->createRandomString($length);
+        $token = $this->createRandomString();
 
         if ($this->doesTokenExist($token)) {
-            return $this->generate($length);
+            return $this->generate();
         }
 
-        $this->setExistingTokens([$token]);
+        $this->existingTokens[] = $token;
 
         return $token;
     }
@@ -44,23 +53,47 @@ class Tokenizr
     /**
      * Create a random string for use with a token.
      *
-     * @param  int    $length
      * @return string
      */
-    private function createRandomString($length, $complexity = 5)
+    private function createRandomString()
     {
-        return substr(str_shuffle(str_repeat($this->getCharacters(), $complexity)), 0, $length);
+        return substr(str_shuffle(str_repeat($this->getCharacters(), self::TOKENIZR_COMPLEXITY)), 0, $this->getTokenLength());
     }
 
     /**
      * Check if the supplied token already exists.
      *
-     * @param  string $token
+     * @param string $token
      * @return bool
      */
     private function doesTokenExist($token)
     {
         return (bool) in_array($token, $this->getExistingTokens());
+    }
+
+    /**
+     * Set the length of the tokens generated.
+     * 
+     * @param int $length
+     * @return void
+     */
+    public function setTokenLength($length)
+    {
+        if (! is_int($length) or $length <= 0) {
+            throw new InvalidArgumentException("$length is should be an integer greater than 0");
+        }
+
+        $this->length = $length;
+    }
+
+    /**
+     * Get the token length.
+     * 
+     * @return int
+     */
+    public function getTokenLength()
+    {
+        return $this->length;
     }
 
     /**

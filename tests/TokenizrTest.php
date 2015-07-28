@@ -15,8 +15,8 @@ class TokenizrTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException('\InvalidArgumentException');
 
-        $this->tokenizr->generate('a naughty string');
-        $this->tokenizr->generate(-999);
+        $this->tokenizr->setTokenLength('a naughty string');
+        $this->tokenizr->setTokenLength(-999);
     }
   
     public function testReturnRandomString()
@@ -29,9 +29,10 @@ class TokenizrTest extends PHPUnit_Framework_TestCase
     public function testDoesntCreateDuplicateTokens()
     {
         $this->tokenizr->setCharacters('ab');
+        $this->tokenizr->setTokenLength(2);
         $this->tokenizr->setExistingTokens(['aa', 'ab', 'ba']);
         
-        $token = $this->tokenizr->generate(2);
+        $token = $this->tokenizr->generate();
 
         $this->assertEquals($token, 'bb');
     }
