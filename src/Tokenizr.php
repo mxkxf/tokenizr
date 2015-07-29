@@ -57,7 +57,9 @@ class Tokenizr
      */
     private function createRandomString()
     {
-        return substr(str_shuffle(str_repeat($this->getCharacters(), self::TOKENIZR_COMPLEXITY)), 0, $this->getTokenLength());
+        $characters = $this->getCharacters();
+        
+        return substr(str_shuffle(str_repeat($characters, self::TOKENIZR_COMPLEXITY)), 0, $this->getTokenLength());
     }
 
     /**
