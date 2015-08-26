@@ -1,6 +1,6 @@
 <?php
 
-use MikeFrancis\Tokenizr;
+use MikeFrancis\Tokenizr\Tokenizr;
 
 class TokenizrTest extends PHPUnit_Framework_TestCase
 {

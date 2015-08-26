@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "MikeFrancis\\": "src"
+            "MikeFrancis\\Tokenizr\\": "src"
         }
     },
     "require": {
