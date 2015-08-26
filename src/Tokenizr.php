@@ -1,4 +1,4 @@
-<?php namespace MikeFrancis;
+<?php namespace MikeFrancis\Tokenizr;
 
 use InvalidArgumentException;
 
