@@ -8,7 +8,7 @@ class TokenizrTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->tokenizr = new Tokenizr;
+        $this->tokenizr = new Tokenizr();
     }
 
     public function testThrowsAnExceptionForInvalidStringLength()
