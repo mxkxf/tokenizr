@@ -93,7 +93,7 @@ class Tokenizr
     /**
      * Get the token length.
      * 
-     * @return int
+     * @return integer
      */
     public function getTokenLength()
     {
