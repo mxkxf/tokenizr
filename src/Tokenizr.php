@@ -1,4 +1,6 @@
-<?php namespace MikeFrancis\Tokenizr;
+<?php
+
+namespace MikeFrancis\Tokenizr;
 
 use InvalidArgumentException;
 
@@ -7,7 +9,7 @@ class Tokenizr
     /**
      * The complexity of each token.
      *
-     * @const int
+     * @const integer
      */
     const TOKENIZR_COMPLEXITY = 5;
 
@@ -81,7 +83,7 @@ class Tokenizr
      */
     public function setTokenLength($length)
     {
-        if (! is_int($length) or $length <= 0) {
+        if (!is_int($length) or $length <= 0) {
             throw new InvalidArgumentException("$length is should be an integer greater than 0");
         }
 
@@ -91,7 +93,7 @@ class Tokenizr
     /**
      * Get the token length.
      * 
-     * @return int
+     * @return integer
      */
     public function getTokenLength()
     {
@@ -107,7 +109,7 @@ class Tokenizr
      */
     public function setCharacters($characters)
     {
-        if (! is_string($characters) or $characters === '') {
+        if (!is_string($characters) or $characters === '') {
             throw new InvalidArgumentException("$characters should be a string");
         }
 
@@ -133,7 +135,7 @@ class Tokenizr
      */
     public function setExistingTokens($tokens)
     {
-        if (! is_array($tokens)) {
+        if (!is_array($tokens)) {
             throw new InvalidArgumentException("$tokens should be an array");
         }
 
