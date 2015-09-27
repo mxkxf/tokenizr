@@ -1,4 +1,6 @@
-<?php namespace MikeFrancis\Tokenizr;
+<?php
+
+namespace MikeFrancis\Tokenizr;
 
 use InvalidArgumentException;
 
@@ -28,7 +30,7 @@ class Tokenizr
     /**
      * Default token length.
      * 
-     * @var integer
+     * @var int
      */
     private $length = 5;
 
@@ -58,7 +60,7 @@ class Tokenizr
     private function createRandomString()
     {
         $characters = $this->getCharacters();
-        
+
         return substr(str_shuffle(str_repeat($characters, self::TOKENIZR_COMPLEXITY)), 0, $this->getTokenLength());
     }
 
@@ -66,6 +68,7 @@ class Tokenizr
      * Check if the supplied token already exists.
      *
      * @param string $token
+     *
      * @return bool
      */
     private function doesTokenExist($token)
@@ -77,11 +80,12 @@ class Tokenizr
      * Set the length of the tokens generated.
      * 
      * @param int $length
+     *
      * @return void
      */
     public function setTokenLength($length)
     {
-        if (! is_int($length) or $length <= 0) {
+        if (!is_int($length) or $length <= 0) {
             throw new InvalidArgumentException("$length is should be an integer greater than 0");
         }
 
@@ -102,12 +106,14 @@ class Tokenizr
      * Set a new bank of characters.
      *
      * @param string $characters
+     *
      * @throws InvalidArgumentException
+     *
      * @return void
      */
     public function setCharacters($characters)
     {
-        if (! is_string($characters) or $characters === '') {
+        if (!is_string($characters) or $characters === '') {
             throw new InvalidArgumentException("$characters should be a string");
         }
 
@@ -128,12 +134,14 @@ class Tokenizr
      * Set the existing tokens array.
      *
      * @param array $tokens
+     *
      * @throws InvalidArgumentException
+     *
      * @return void
      */
     public function setExistingTokens($tokens)
     {
-        if (! is_array($tokens)) {
+        if (!is_array($tokens)) {
             throw new InvalidArgumentException("$tokens should be an array");
         }
 

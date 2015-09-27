@@ -8,7 +8,7 @@ class TokenizrTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->tokenizr = new Tokenizr;
+        $this->tokenizr = new Tokenizr();
     }
 
     public function testThrowsAnExceptionForInvalidStringLength()
@@ -18,7 +18,7 @@ class TokenizrTest extends PHPUnit_Framework_TestCase
         $this->tokenizr->setTokenLength('a naughty string');
         $this->tokenizr->setTokenLength(-999);
     }
-  
+
     public function testReturnRandomString()
     {
         $token = $this->tokenizr->generate();
@@ -31,7 +31,7 @@ class TokenizrTest extends PHPUnit_Framework_TestCase
         $this->tokenizr->setCharacters('ab');
         $this->tokenizr->setTokenLength(2);
         $this->tokenizr->setExistingTokens(['aa', 'ab', 'ba']);
-        
+
         $token = $this->tokenizr->generate();
 
         $this->assertEquals($token, 'bb');
